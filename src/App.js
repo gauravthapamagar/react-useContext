@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+//this app.jsx is the place where context api was made so that import createContext is done
+//similarly jun thau ma createContext banayo tei thau ma provider pani use garera value pass garnu parchha
 
+
+
+
+import './App.css';
+import React from 'react';
+import { createContext } from 'react';
+import ChildA from './components/ChildA';
+export const userContext = createContext();
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <userContext.Provider value={"coding"}>
+        <ChildA/>
+      </userContext.Provider>
     </div>
   );
 }
